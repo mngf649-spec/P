@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ویستا مور | فروشگاه لباس</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;font-family:Vazirmatn,sans-serif}html{scroll-behavior:smooth}
+body{background:#f7fbff;color:#172033;line-height:1.8}a{text-decoration:none;color:inherit}button{font-family:inherit;cursor:pointer}
+header{position:sticky;top:0;z-index:1000;background:#ffffffee;backdrop-filter:blur(12px);border-bottom:1px solid #e6eef8}
+.navbar{max-width:1200px;margin:auto;padding:15px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:25px;font-weight:800;color:#0878e8}.logo span{color:#172033}nav{display:flex;gap:25px}nav a{font-size:14px;font-weight:600;transition:.3s}nav a:hover{color:#0878e8}
+.nav-actions{display:flex;gap:10px}.icon-btn{width:42px;height:42px;border:1px solid #dfeaf5;background:#fff;border-radius:12px;font-size:18px;position:relative;transition:.3s}.icon-btn:hover{background:#0878e8;color:#fff}
+.cart-count{position:absolute;top:-6px;left:-5px;width:19px;height:19px;background:#ff4d67;color:#fff;border-radius:50%;font-size:11px;display:flex;align-items:center;justify-content:center}.menu-btn{display:none}
+.hero{max-width:1200px;margin:35px auto;padding:70px 55px;border-radius:30px;background:linear-gradient(135deg,#0878e8,#004b9b);color:#fff;position:relative;overflow:hidden}
+.hero-content{max-width:650px;position:relative;z-index:2}.hero small{background:#ffffff26;padding:7px 15px;border-radius:30px}.hero h1{font-size:clamp(35px,5vw,62px);line-height:1.3;margin:25px 0 15px}.hero p{color:#e5f2ff;max-width:570px;margin-bottom:28px}
+.hero-btn{border:0;background:#fff;color:#086fd5;padding:13px 25px;border-radius:13px;font-weight:800;transition:.3s}.hero-btn:hover{transform:translateY(-4px);box-shadow:0 12px 25px #0003}
+.section{max-width:1200px;margin:75px auto;padding:0 20px}.section-title{text-align:center;margin-bottom:35px}.section-title h2{font-size:30px}.section-title p{color:#738096;font-size:14px}
+.categories{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.category{background:#fff;border:1px solid #e6eef7;border-radius:20px;padding:25px 15px;text-align:center;transition:.3s}.category:hover{transform:translateY(-7px);box-shadow:0 15px 35px #16508c1a}.category-icon{font-size:42px}
+.filter-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:30px}.filter-buttons button{border:1px solid #d9e8f7;background:#fff;padding:9px 18px;border-radius:30px;color:#47546a}.filter-buttons button.active,.filter-buttons button:hover{background:#0878e8;color:#fff;border-color:#0878e8}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}.product{background:#fff;border-radius:20px;overflow:hidden;border:1px solid #e8eef5;transition:.35s}.product:hover{transform:translateY(-7px);box-shadow:0 18px 35px #1446781f}
+.product-image{height:245px;background:linear-gradient(135deg,#eaf5ff,#d7ebff);display:flex;align-items:center;justify-content:center;font-size:80px;position:relative}.badge{position:absolute;top:12px;right:12px;background:#0878e8;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px}
+.product-info{padding:17px}.product-info h3{font-size:16px}.product-info p{color:#7a8495;font-size:12px;margin-bottom:10px}.price{display:flex;justify-content:space-between;align-items:center}.price strong{color:#0878e8;font-size:17px}.add-cart{border:0;background:#eaf5ff;color:#0878e8;width:38px;height:38px;border-radius:11px;font-size:18px}.add-cart:hover{background:#0878e8;color:#fff}
+.about{background:#fff;border-radius:25px;padding:40px;border:1px solid #e7eef6;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.about-box{background:#edf7ff;min-height:280px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:100px}.about h2{font-size:30px;margin-bottom:15px}.about p{color:#667286;font-size:14px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact-info,.contact-form{background:#fff;border-radius:22px;padding:30px;border:1px solid #e5edf6}.contact-item{padding:13px 0;border-bottom:1px solid #edf1f6}.contact-item span{color:#0878e8;font-weight:700}
+.contact-form input,.contact-form textarea{width:100%;border:1px solid #dfe8f1;border-radius:12px;padding:13px;outline:0;margin-bottom:13px}.contact-form textarea{height:130px;resize:vertical}.submit-btn{width:100%;border:0;background:#0878e8;color:#fff;padding:13px;border-radius:12px;font-weight:700}
+footer{margin-top:80px;background:#071c35;color:#fff;padding:50px 20px 20px}.footer-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}.footer-logo{font-size:25px;font-weight:800;color:#55b1ff;margin-bottom:12px}footer p,footer li{color:#b6c4d6;font-size:13px}footer ul{list-style:none}footer li{margin:7px 0}.copyright{max-width:1200px;margin:35px auto 0;padding-top:20px;border-top:1px solid #19334f;text-align:center;color:#9aabc0;font-size:12px}
+.toast{position:fixed;bottom:25px;right:25px;background:#071c35;color:#fff;padding:13px 20px;border-radius:12px;transform:translateY(100px);opacity:0;transition:.35s;z-index:2000}.toast.show{transform:translateY(0);opacity:1}
+@media(max-width:900px){.products{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(2,1fr)}.about,.contact{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){nav{display:none;position:absolute;top:72px;right:15px;left:15px;background:#fff;border-radius:15px;padding:20px;box-shadow:0 15px 35px #0002;flex-direction:column}nav.open{display:flex}.menu-btn{display:block}.hero{margin:15px;padding:45px 25px}.hero h1{font-size:35px}.products{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="navbar">
+<a href="#" class="logo">ویستا <span>مور</span></a>
+<nav id="nav"><a href="#home">خانه</a><a href="#categories">دسته‌بندی</a><a href="#products">محصولات</a><a href="#about">درباره ما</a><a href="#contact">تماس با ما</a></nav>
+<div class="nav-actions"><button class="icon-btn menu-btn" id="menuBtn">☰</button><button class="icon-btn" onclick="showToast('سبد خرید شما خالی است')">🛒<span class="cart-count" id="cartCount">0</span></button></div>
+</div></header>
+
+<section class="hero" id="home"><div class="hero-content"><small>✨ کالکشن جدید ۲۰۲۶</small><h1>استایل خودت را<br>متفاوت بساز</h1><p>جدیدترین لباس‌ها و استایل‌های روز را در ویستا مور پیدا کن. کیفیت بالا، طراحی مدرن و انتخابی برای هر سلیقه.</p><a href="#products"><button class="hero-btn">مشاهده محصولات ←</button></a></div></section>
+
+<section class="section" id="categories"><div class="section-title"><h2>دسته‌بندی‌ها</h2><p>استایل مورد علاقه خودت را انتخاب کن</p></div>
+<div class="categories"><div class="category"><div class="category-icon">👕</div><h3>لباس مردانه</h3></div><div class="category"><div class="category-icon">👗</div><h3>لباس زنانه</h3></div><div class="category"><div class="category-icon">🧥</div><h3>پالتو و کت</h3></div><div class="category"><div class="category-icon">👟</div><h3>کفش و اکسسوری</h3></div></div></section>
+
+<section class="section" id="products"><div class="section-title"><h2>محصولات منتخب</h2><p>انتخاب‌های جدید و محبوب ویستا مور</p></div>
+<div class="filter-buttons"><button class="active" data-filter="all">همه</button><button data-filter="men">مردانه</button><button data-filter="women">زنانه</button><button data-filter="accessory">اکسسوری</button></div>
+<div class="products">
+<div class="product" data-category="men"><div class="product-image">👕<span class="badge">جدید</span></div><div class="product-info"><h3>تیشرت کلاسیک آبی</h3><p>پارچه نرم و باکیفیت</p><div class="price"><strong>۷۹۰,۰۰۰ تومان</strong><button class="add-cart">+</button></div></div></div>
+<div class="product" data-category="women"><div class="product-image">👗<span class="badge">پرفروش</span></div><div class="product-info"><h3>پیراهن تابستانی</h3><p>طراحی مدرن و جذاب</p><div class="price"><strong>۱,۲۵۰,۰۰۰ تومان</strong><button class="add-cart">+</button></div></div></div>
+<div class="product" data-category="men"><div class="product-image">🧥<span class="badge">جدید</span></div><div class="product-info"><h3>کت اسپرت مردانه</h3><p>مناسب استایل روزمره</p><div class="price"><strong>۲,۴۹۰,۰۰۰ تومان</strong><button class="add-cart">+</button></div></div></div>
+<div class="product" data-category="accessory"><div class="product-image">🧢<span class="badge">ویژه</span></div><div class="product-info"><h3>کلاه اسپرت</h3><p>طراحی ساده و شیک</p><div class="price"><strong>۴۹۰,۰۰۰ تومان</strong><button class="add-cart">+</button></div></div></div>
+<div class="product" data-category="women"><div class="product-image">👚</div><div class="product-info"><h3>بلوز سفید</h3><p>استایل مینیمال</p><div class="price"><strong>۸۹۰,۰۰۰ تومان</strong><button class="add-cart">+</button></div></div></div>
+<div class="product" data-category="accessory"><div class="product-image">👜</div><div class="product-info"><h3>کیف دستی</h3><p>مناسب استفاده روزانه</p><div class="price"><strong>۱,۶۹۰,۰۰۰ تومان</strong><button class="add-cart">+</button></div></div></div>
+</div></section>
+
+<section class="section" id="about"><div class="about"><div class="about-box">👕</div><div><h2>درباره ویستا مور</h2><p>ویستا مور با هدف ارائه لباس‌های باکیفیت و طراحی‌های مدرن ایجاد شده است. ما تلاش می‌کنیم خرید لباس را ساده، جذاب و لذت‌بخش کنیم.</p><br><p>در ویستا مور همیشه به دنبال انتخاب محصولاتی هستیم که بتوانند استایل شما را خاص‌تر کنند.</p></div></div></section>
+
+<section class="section" id="contact"><div class="section-title"><h2>تماس با ما</h2><p>سؤالی دارید؟ با ما در ارتباط باشید.</p></div><div class="contact">
+<div class="contact-info"><h2>راه‌های ارتباطی</h2><div class="contact-item">📞 <span>تلفن:</span> ۰۲۱-۱۲۳۴۵۶۷۸</div><div class="contact-item">📧 <span>ایمیل:</span> info@vistamour.com</div><div class="contact-item">📍 <span>آدرس:</span> تهران، خیابان ولیعصر</div><div class="contact-item">🕐 <span>ساعت پاسخگویی:</span> ۹ صبح تا ۹ شب</div></div>
+<form class="contact-form" id="contactForm"><input type="text" placeholder="نام شما" required><input type="email" placeholder="ایمیل شما" required><textarea placeholder="پیام شما..." required></textarea><button class="submit-btn">ارسال پیام</button></form>
+</div></section>
+
+<footer><div class="footer-inner"><div><div class="footer-logo">ویستا مور</div><p>فروشگاه آنلاین لباس با طراحی مدرن، کیفیت بالا و استایل متفاوت.</p></div><div><h3>لینک‌ها</h3><ul><li><a href="#home">خانه</a></li><li><a href="#products">محصولات</a></li><li><a href="#about">درباره ما</a></li><li><a href="#contact">تماس با ما</a></li></ul></div><div><h3>شبکه‌های اجتماعی</h3><ul><li>Instagram</li><li>Telegram</li><li>YouTube</li></ul></div></div><div class="copyright">© ۲۰۲۶ ویستا مور — تمامی حقوق محفوظ است.</div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+const menuBtn=document.getElementById("menuBtn"),nav=document.getElementById("nav");
+menuBtn.addEventListener("click",()=>nav.classList.toggle("open"));
+let cartCount=0;
+document.querySelectorAll(".add-cart").forEach(btn=>btn.addEventListener("click",()=>{cartCount++;document.getElementById("cartCount").textContent=cartCount;showToast("محصول به سبد خرید اضافه شد 🛒")}));
+function showToast(message){const t=document.getElementById("toast");t.textContent=message;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500)}
+const filters=document.querySelectorAll(".filter-buttons button"),products=document.querySelectorAll(".product");
+filters.forEach(btn=>btn.addEventListener("click",()=>{filters.forEach(b=>b.classList.remove("active"));btn.classList.add("active");const f=btn.dataset.filter;products.forEach(p=>p.style.display=f==="all"||p.dataset.category===f?"block":"none")}));
+document.getElementById("contactForm").addEventListener("submit",e=>{e.preventDefault();showToast("پیام شما با موفقیت ارسال شد ✅");e.target.reset()});
+document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+</script>
+</body>
+</html>
